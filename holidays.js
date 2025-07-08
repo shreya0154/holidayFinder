@@ -33,7 +33,7 @@ selectedDiv.addEventListener("click", () => {
 document.getElementById("nextBtn").addEventListener("click", async () => {
   msg.innerText = "Fetching next long weekend...";
   try {
-    const res = await fetch(`http://localhost:3000/api/long-weekends/next?country=${currentCountry}`);
+    const res = await fetch(`https://holidayfinderservice.onrender.com/api/long-weekends/next?country=${currentCountry}`);
     const data = await res.json();
     if (data && data.next) {
       msg.innerText = `🎉 Next: ${data.next.start} → ${data.next.end} (${data.next.days} days)`;
@@ -50,7 +50,7 @@ document.getElementById("nextBtn").addEventListener("click", async () => {
 document.getElementById("allBtn").addEventListener("click", async () => {
   msg.innerText = "Fetching all long weekends...";
   try {
-    const res = await fetch(`http://localhost:3000/api/long-weekends?country=${currentCountry}`);
+    const res = await fetch(`https://holidayfinderservice.onrender.com/api/long-weekends?country=${currentCountry}`);
     const data = await res.json();
     if (data && data.longWeekends?.length > 0) {
       msg.innerText = `📅 Found ${data.longWeekends.length} long weekends:`;
