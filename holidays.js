@@ -6,7 +6,7 @@ const selectedDiv = document.querySelector(".selected");
 const holidayList = document.querySelector(".holidayList");
 const msg = document.querySelector(".message");
 
-let currentCountry = "IN";
+let currentCountry = "US";
 
 // Populate options
 for (let code in countryList) {
